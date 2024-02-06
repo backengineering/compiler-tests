@@ -1,3 +1,7 @@
+# Back Engineering Labs Fork
+
+Just using cmake to compile each SEH test and using `/GS`, `/DEBUG:FULL`, and `/O2`.
+
 Microsoft compiler-tests
 ========================
 
