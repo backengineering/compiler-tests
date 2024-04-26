@@ -7,7 +7,7 @@ Just using cmake to compile each SEH test and using `/GS`, `/DEBUG:FULL`, and `/
 ```
 cmake -B .build
 cd .build
-cmake --build . --release
+cmake --build . --config Release
 ```
 
 Microsoft compiler-tests
