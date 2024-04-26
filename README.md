@@ -2,6 +2,14 @@
 
 Just using cmake to compile each SEH test and using `/GS`, `/DEBUG:FULL`, and `/O2`.
 
+### Build
+
+```
+cmake -B .build
+cd .build
+cmake --build . --release
+```
+
 Microsoft compiler-tests
 ========================
 

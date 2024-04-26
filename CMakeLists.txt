@@ -3,12 +3,21 @@ project(compiler-tests)
 
 # Set the source files
 file(GLOB SOURCES "src/*.c")
+file(GLOB CXX_SOURCES "eh/*.cpp")
 
 # Iterate over each source file and create an EXE
 foreach(SOURCE_FILE ${SOURCES})
     get_filename_component(FILE_NAME ${SOURCE_FILE} NAME_WE)
     add_executable(${FILE_NAME} ${SOURCE_FILE})
 	target_include_directories(${FILE_NAME} PRIVATE ${CMAKE_SOURCE_DIR}/inc)
+    target_compile_options(${FILE_NAME} PRIVATE "/GL" "/GS")
+    target_link_options(${FILE_NAME} PRIVATE "/DEBUG:FULL")
+endforeach()
+
+# Iterate over each source file and create an EXE
+foreach(SOURCE_FILE ${CXX_SOURCES})
+    get_filename_component(FILE_NAME ${SOURCE_FILE} NAME_WE)
+    add_executable(${FILE_NAME} ${SOURCE_FILE})
     target_compile_options(${FILE_NAME} PRIVATE "/GL" "/GS")
     target_link_options(${FILE_NAME} PRIVATE "/DEBUG:FULL")
 endforeach()
